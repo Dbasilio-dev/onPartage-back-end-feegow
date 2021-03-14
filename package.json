@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "express": "^4.17.1",
-    "sqlite3": "^5.0.2"
+    "mongoose": "^5.12.0"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",

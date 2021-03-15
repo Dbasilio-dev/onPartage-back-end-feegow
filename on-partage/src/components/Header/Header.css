@@ -1,22 +1,25 @@
 header {
-    width: 100%;
     background: var(--primary-yellow);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px;
 }
 
 .header__imagem {
-    width: 200px;
-    margin: 10px;
+    width: 160px;
+}
+
+.header__nav {
+    margin-left: 50px;
 }
 
 .header__nav__item {
     margin: 0 10px;
     text-decoration: none;
-    font-family: Raleway;
+    font-family: var(--body-font);
     font-weight:500;
     font-size: 15px;
     color: var(--dark-blue);
+}
+
+.header__nav__btns {
+    display: flex;
+    align-items: center;
 }

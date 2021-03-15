@@ -17,6 +17,7 @@ export const Cadastro = styled(Button)({
   textTransform: 'none',
   fontWeight: 600,
   fontSize: '18px',
+  width: '200px'
 });
 
 export const Acessar = styled(Button)({
@@ -30,5 +31,6 @@ export const Acessar = styled(Button)({
   fontFamily: 'var(--body-font)',
   fontWeight: 600,
   textTransform: 'none',
-  fontSize: '18px'
+  fontSize: '18px',
+  width: '200px'
 });

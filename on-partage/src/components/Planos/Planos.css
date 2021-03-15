@@ -1,0 +1,68 @@
+/* .planos__tables {
+    display: flex;
+    justify-content: space-evenly;
+} */
+
+.planos__table {
+    border: var(--grey) solid 1px;
+    width: 30%;
+    margin: 50px 0;
+}
+
+.planos__thead {
+    text-align: center;
+    font-family: var(--body-font);
+    font-weight: 600;
+    font-size: 35px;
+    color: var(--dark-blue);
+    border: rgb(214, 214, 214) solid 1px;
+    padding: 20px 10px;
+    vertical-align: middle;
+    background: var(--primary-yellow);
+}
+
+.planos__info {
+    font-family: var(--body-font);
+    font-weight: 300;
+    font-size: 25px;
+    color: black;
+    border: rgb(214, 214, 214) solid 1px;
+    padding: 20px 20px;
+    vertical-align: middle;
+}
+
+.planos__preco {
+    font-family: var(--body-font);
+    font-size: 35px;
+    font-weight: 700;
+    color: var(--dark-blue);
+    border: rgb(214, 214, 214) solid 1px;
+    padding: 20px 10px;
+    vertical-align: middle;
+    height: 150px;
+}
+
+.planos__periodo {
+    font-size: 25px;
+    font-weight: 500;
+    color: black;
+}
+
+.planos__usuarios {
+    font-size: 25px;
+    font-weight: 300;
+    color: black;
+}
+
+/* ------------------ Responsividade */
+
+@media (max-width: 995px) {
+    .planos__tables{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .planos__table {
+        width: 90%;
+    }
+}

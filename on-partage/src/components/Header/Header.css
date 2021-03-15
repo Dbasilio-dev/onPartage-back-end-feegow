@@ -6,12 +6,8 @@ header {
     width: 160px;
 }
 
-.header__nav {
-    margin-left: 50px;
-}
-
 .header__nav__item {
-    margin: 0 10px;
+    margin: 10px;
     text-decoration: none;
     font-family: var(--body-font);
     font-weight:500;

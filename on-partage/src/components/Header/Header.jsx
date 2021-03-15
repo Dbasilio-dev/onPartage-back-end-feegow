@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../assets/images/logo.svg";
-import { Cadastro, Acessar } from "../Button/Button";
+import { BtnAzul, BtnAmarelo } from "../Button/Button";
 import "./Header.css";
 // import styles from '../Button/Button.module.css'
 // import { Button } from '@material-ui/core'
@@ -8,6 +8,7 @@ import {
   Navbar,
   Nav
 } from "react-bootstrap";
+import { Link } from 'react-router-dom'
 
 export const Header = (props) => {
   return (
@@ -19,15 +20,15 @@ export const Header = (props) => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto header__nav">
-            <Nav.Link className="header__nav__item" href="#">Início</Nav.Link>
-            <Nav.Link className="header__nav__item" href="#quem-somos">Quem somos</Nav.Link>
-            <Nav.Link className="header__nav__item" href="#planos">Planos</Nav.Link>
-            <Nav.Link className="header__nav__item" href="#contato">Contato</Nav.Link>
-            <Nav.Link className="header__nav__item" href="#sou-funcionario">Sou funcionário</Nav.Link>
+            <Nav className="header__nav__item" href="#">Início</Nav>
+            <Nav className="header__nav__item" href="#quem-somos">Quem somos</Nav>
+            <Nav className="header__nav__item" href="#planos">Planos</Nav>
+            <Nav className="header__nav__item" href="#contato">Contato</Nav>
+            <Nav className="header__nav__item" href="#sou-funcionario">Sou funcionário</Nav>
           </Nav>
           <Nav className="header__nav__btns">
-            <Acessar>Acessar</Acessar>
-            <Cadastro>Cadastre-se</Cadastro>
+            <BtnAmarelo>Acessar</BtnAmarelo>
+            <BtnAzul>Cadastre-se</BtnAzul>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

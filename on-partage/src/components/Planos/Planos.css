@@ -1,10 +1,4 @@
-/* .planos__tables {
-    display: flex;
-    justify-content: space-evenly;
-} */
-
 .planos__table {
-    border: var(--grey) solid 1px;
     width: 30%;
     margin: 50px 0;
 }
@@ -54,13 +48,15 @@
     color: black;
 }
 
+.planos__btn {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
 /* ------------------ Responsividade */
 
 @media (max-width: 995px) {
-    .planos__tables{
-        flex-direction: column;
-        align-items: center;
-    }
 
     .planos__table {
         width: 90%;

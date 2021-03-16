@@ -1,9 +1,10 @@
 import React from "react";
+import { BtnAmareloHeader } from "../Button/Button";
 import "./Planos.css";
 
 export const Planos = (props) => {
   return (
-    <section className="planos__tables">
+    <>
       <table className="planos__table">
         <thead>
           <tr>
@@ -29,6 +30,11 @@ export const Planos = (props) => {
               <p className="planos__periodo">Anualmente:</p>
               {props.precoAnual}
               <p className="planos__usuarios">{props.porUsuario}</p>
+            </td>
+          </tr>
+          <tr>
+            <td className="planos__btn" >
+              <BtnAmareloHeader>Obter agora</BtnAmareloHeader>
             </td>
           </tr>
         </tbody>
@@ -107,6 +113,6 @@ export const Planos = (props) => {
           </td>
         </tr>
       </table> */}
-    </section>
+    </>
   );
 };

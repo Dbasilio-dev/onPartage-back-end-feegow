@@ -1,0 +1,14 @@
+.sobre {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sobre__textoWrapper {
+    width: 50%;
+}
+
+.sobre__texto {
+    font-family: var(--body-font);
+    font-weight: 400;
+    font-size: 25px;
+}

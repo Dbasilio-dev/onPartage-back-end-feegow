@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../assets/images/logo.svg";
-import { BtnAzul, BtnAmarelo } from "../Button/Button";
+import { BtnAzulHeader, BtnAmareloHeader } from "../Button/Button";
 import "./Header.css";
 // import styles from '../Button/Button.module.css'
 // import { Button } from '@material-ui/core'
@@ -27,8 +27,8 @@ export const Header = (props) => {
             <Nav className="header__nav__item" href="#sou-funcionario">Sou funcionário</Nav>
           </Nav>
           <Nav className="header__nav__btns">
-            <BtnAmarelo>Acessar</BtnAmarelo>
-            <BtnAzul>Cadastre-se</BtnAzul>
+            <BtnAmareloHeader>Acessar</BtnAmareloHeader>
+            <BtnAzulHeader>Cadastre-se</BtnAzulHeader>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

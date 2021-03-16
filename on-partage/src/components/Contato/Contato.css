@@ -1,8 +1,3 @@
-.contato {
-    width: 80%;
-    margin: 0 auto;
-}
-
 .contato__titulo {
     font-size: 30px;
     font-family: var(--body-font);
@@ -22,6 +17,6 @@
 
 @media (max-width: 995px) {
     .contato__form {
-        width: 90%;
+        width: 100%;
     }
 }

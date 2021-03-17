@@ -9,7 +9,7 @@
     font-weight: 600;
     font-size: 35px;
     color: var(--dark-blue);
-    border: rgb(214, 214, 214) solid 1px;
+    border: #d6d6d6 solid 1px;
     padding: 20px 10px;
     vertical-align: middle;
     background: var(--primary-yellow);

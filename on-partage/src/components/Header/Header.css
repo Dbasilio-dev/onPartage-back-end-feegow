@@ -6,6 +6,10 @@ header {
     width: 160px;
 }
 
+.header__nav {
+    margin-left: 150px;
+}
+
 .header__nav__item {
     margin: 10px;
     text-decoration: none;
@@ -18,4 +22,13 @@ header {
 .header__nav__btns {
     display: flex;
     align-items: center;
+}
+
+/* ------------------ Responsividade */
+
+@media (max-width: 995px) {
+    .header__nav {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
 }

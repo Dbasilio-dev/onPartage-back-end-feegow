@@ -27,7 +27,7 @@ export const Home = () => {
         </section>
       </Grow>
       <Grow in={true} timeout={1000}>
-        <section className="homeSection">
+        <section className="homeSection homeSection__reverse">
           <img className="homeSection__img" src={imgHomeDois} />
           <p className="homeSection__texto">
             Vocês no controle dos seus dados

@@ -1,10 +1,14 @@
+{
+  require("dotenv").config();
+}
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
 
 module.exports = () => {
-  mongoose.connect("mongodb://localhost/partage", { useNewUrlParser: true });
+  mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true });
   const db = mongoose.connection;
   db.on("error", (error) => console.log(`[INFO]: ${error}`));
   db.once("open", () => console.log("[INFO]: Connected to database!"));

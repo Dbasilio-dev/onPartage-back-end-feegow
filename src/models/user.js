@@ -16,11 +16,11 @@ const userSchema = new mongoose.Schema({
   type: {
     type: String,
     required: true,
-    deafult: "Cliente",
+    default: "Cliente",
   },
   plan: {
     type: String,
-    required: false,
+    required: true,
   },
   started: {
     type: Date,

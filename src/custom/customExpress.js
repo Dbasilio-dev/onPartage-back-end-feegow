@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 module.exports = () => {
   mongoose.connect("mongodb://localhost/partage", { useNewUrlParser: true });
@@ -9,6 +10,7 @@ module.exports = () => {
   db.once("open", () => console.log("[INFO]: Connected to database!"));
 
   app.use(express.json());
+  app.use(cors());
   const userRoute = require("../routes/users.js");
   const costumerRoute = require("../routes/costumers");
   const planRoute = require("../routes/plans");

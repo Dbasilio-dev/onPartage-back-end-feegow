@@ -8,12 +8,16 @@
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.7"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "name": "Partage",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./src/app.js"
+    "start": "node ./src/app.js",
+    "dev": "nodemon ./src/app.js"
   },
   "keywords": [],
   "author": "",

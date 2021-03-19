@@ -14,9 +14,11 @@ module.exports = () => {
   const userRoute = require("../routes/users.js");
   const costumerRoute = require("../routes/costumers");
   const planRoute = require("../routes/plans");
+  const defaultRoute = require("../routes/default");
   app.use("/users", userRoute);
   app.use("/costumers", costumerRoute);
   app.use("/plans", planRoute);
+  app.use("/", defaultRoute);
 
   return app;
 };

@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:id", getUsers, (req, res) => {
+router.get("/:email", getUsers, (req, res) => {
   res.send(res.user);
 });
 
@@ -32,7 +32,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:id", getUsers, async (req, res) => {
+router.put("/:email", getUsers, async (req, res) => {
   if (req.body.name != null) {
     res.user.name = req.body.name;
   }
@@ -59,7 +59,7 @@ router.put("/:id", getUsers, async (req, res) => {
   }
 });
 
-router.delete("/:id", getUsers, async (req, res) => {
+router.delete("/:email", getUsers, async (req, res) => {
   try {
     await res.user.delete();
     res.json({ message: "Costumer removed" });
@@ -71,7 +71,7 @@ router.delete("/:id", getUsers, async (req, res) => {
 async function getUsers(req, res, next) {
   let user;
   try {
-    user = await User.findById(req.params.id);
+    user = await User.find({ email: req.params.email });
   } catch (err) {
     res.status(404).json({ message: err });
   }

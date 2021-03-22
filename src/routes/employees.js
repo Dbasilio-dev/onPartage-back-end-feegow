@@ -4,8 +4,8 @@ const User = require("../models/user");
 
 router.get("/", async (req, res) => {
   try {
-    const users = await User.find();
-    res.send(users);
+    const employees = await User.find({ type: "Funcionário" });
+    res.status(201).json(employees);
   } catch (err) {
     res.status(500).json({ message: err });
   }
@@ -62,9 +62,9 @@ router.put("/:email", getUsers, async (req, res) => {
 router.delete("/:email", getUsers, async (req, res) => {
   try {
     await res.user.delete();
-    res.json({ message: "User removed" });
+    res.json({ message: "Employee removed" });
   } catch (err) {
-    res.status(404).json({ message: "User not found" });
+    res.status(404).json({ message: "Employee not found" });
   }
 });
 

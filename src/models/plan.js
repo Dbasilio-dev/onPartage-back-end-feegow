@@ -4,7 +4,6 @@ const planSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    unique: true,
   },
   price: {
     type: Number,
@@ -17,6 +16,10 @@ const planSchema = new mongoose.Schema({
   screens: {
     type: Number,
     required: true,
+  },
+  type: {
+    type: String,
+    required: false,
   },
 });
 

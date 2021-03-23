@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
   },
   plan: {
     type: String,
-    required: true,
+    required: false,
   },
   started: {
     type: Date,

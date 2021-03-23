@@ -4,7 +4,7 @@ const Plan = require("../models/plan");
 
 router.get("/", async (req, res) => {
   try {
-    const plans = await Plan.find();
+    const plans = await Plan.find({ type: "Anual" });
     res.status(201).send(plans);
   } catch (err) {
     res.status(500).json({ message: err });
@@ -21,6 +21,7 @@ router.post("/", async (req, res) => {
     price: req.body.price,
     size: req.body.size,
     screens: req.body.screens,
+    type: "Anual",
   });
 
   try {
@@ -44,6 +45,9 @@ router.put("/:name", getPlans, async (req, res) => {
   if (req.body.screens != null) {
     res.plan.screens = req.body.screens;
   }
+  if (req.body.type != null) {
+    res.plan.type = req.body.type;
+  }
 
   try {
     const updatedPlan = await res.plan.save();
@@ -65,7 +69,7 @@ router.delete("/:name", getPlans, async (req, res) => {
 async function getPlans(req, res, next) {
   let plan;
   try {
-    plan = await Plan.find({ name: req.params.name });
+    plan = await Plan.find({ name: req.params.name, type: "Anual" });
   } catch (err) {
     res.status(404).send({ message: err });
   }

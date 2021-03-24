@@ -11,8 +11,13 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:email", getUsers, (req, res) => {
-  res.send(res.user);
+router.get("/:email", async (req, res) => {
+  try {
+    const foundUser = await User.find({ email: req.params.email });
+    res.send(foundUser);
+  } catch (err) {
+    res.status(404).json({ message: err });
+  }
 });
 
 router.post("/", async (req, res) => {
@@ -32,7 +37,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:email", getUsers, async (req, res) => {
+router.put("/:id", getUsers, async (req, res) => {
   if (req.body.name != null) {
     res.user.name = req.body.name;
   }
@@ -59,7 +64,7 @@ router.put("/:email", getUsers, async (req, res) => {
   }
 });
 
-router.delete("/:email", getUsers, async (req, res) => {
+router.delete("/:id", getUsers, async (req, res) => {
   try {
     await res.user.delete();
     res.json({ message: "User removed" });
@@ -71,7 +76,7 @@ router.delete("/:email", getUsers, async (req, res) => {
 async function getUsers(req, res, next) {
   let user;
   try {
-    user = await User.find({ email: req.params.email });
+    user = await User.findById(req.params.id);
   } catch (err) {
     res.status(404).json({ message: err });
   }

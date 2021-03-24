@@ -11,8 +11,13 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:name", getPlans, (req, res) => {
-  res.send(res.plan);
+router.get("/:name", async (req, res) => {
+  try {
+    const foundPlan = await Plan.find({ name: req.params.name });
+    res.send(foundPlan);
+  } catch (err) {
+    res.status(404).json({ message: err });
+  }
 });
 
 router.post("/", async (req, res) => {
@@ -32,7 +37,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:name", getPlans, async (req, res) => {
+router.put("/:id", getPlans, async (req, res) => {
   if (req.body.name != null) {
     res.plan.name = req.body.name;
   }
@@ -57,7 +62,7 @@ router.put("/:name", getPlans, async (req, res) => {
   }
 });
 
-router.delete("/:name", getPlans, async (req, res) => {
+router.delete("/:id", getPlans, async (req, res) => {
   try {
     await res.plan.delete();
     res.send({ message: "Plan removed" });
@@ -69,7 +74,7 @@ router.delete("/:name", getPlans, async (req, res) => {
 async function getPlans(req, res, next) {
   let plan;
   try {
-    plan = await Plan.find({ name: req.params.name });
+    plan = await Plan.findById(req.params.id);
   } catch (err) {
     res.status(404).send({ message: err });
   }

@@ -20,7 +20,7 @@ router.post("/", async (req, res) => {
     name: req.body.name,
     email: req.body.email,
     password: req.body.password,
-    type: req.body.type,
+    type: "Funcionário",
     plan: req.body.plan,
     started: req.body.started,
   });

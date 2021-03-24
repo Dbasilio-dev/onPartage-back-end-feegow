@@ -20,15 +20,14 @@ module.exports = () => {
   app.use(cors());
   const userRoute = require("../routes/users.js");
   const costumerRoute = require("../routes/costumers");
-  const mplanRoute = require("../routes/mplans");
-  const aplanRoute = require("../routes/aplans");
+  const planRoute = require("../routes/plans");
   const defaultRoute = require("../routes/default");
   const employeesRoute = require("../routes/employees");
   app.use("/users", userRoute);
   app.use("/costumers", costumerRoute);
   app.use("/employees", employeesRoute);
-  app.use("/mplans", mplanRoute);
-  app.use("/aplans", aplanRoute);
+  app.use("/plans", planRoute);
+
   app.use("/", defaultRoute);
 
   return app;

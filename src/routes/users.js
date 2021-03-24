@@ -11,8 +11,13 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:id", getUsers, (req, res) => {
-  res.send(res.user);
+router.get("/:email", async (req, res) => {
+  try {
+    const foundUser = await User.find({ email: req.params.email });
+    res.send(foundUser);
+  } catch (err) {
+    res.status(404).json({ message: err });
+  }
 });
 
 router.post("/", async (req, res) => {
@@ -59,12 +64,12 @@ router.put("/:id", getUsers, async (req, res) => {
   }
 });
 
-router.delete("/:id", getUsers, async (req, res) => {
+router.delete("/:email", async (req, res) => {
   try {
-    await res.user.delete();
-    res.json({ message: "User removed" });
+    const userRemoved = await User.remove({ email: req.params.email });
+    res.json(userRemoved);
   } catch (err) {
-    res.status(404).json({ message: "User not found" });
+    res.json({ message: err });
   }
 });
 

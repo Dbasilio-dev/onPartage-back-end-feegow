@@ -1,6 +1,3 @@
-{
-  require("dotenv").config();
-}
 const custom = require("./custom/customExpress");
 const app = custom();
 

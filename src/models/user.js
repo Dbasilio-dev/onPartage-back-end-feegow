@@ -16,8 +16,7 @@ const userSchema = new mongoose.Schema({
   },
   type: {
     type: String,
-    required: true,
-    default: "Cliente",
+    required: false,
   },
   plan: {
     type: String,
